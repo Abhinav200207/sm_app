@@ -7,7 +7,7 @@ export const loginUser = (email, password) => async (dispatch) => {
         });
 
         const { data } = await axios.post(
-            "/api/v1/login",
+            "https://abmemories.herokuapp.com/api/v1/login",
             { email, password },
             {
                 headers: {
@@ -37,7 +37,7 @@ export const loadUser = () => async (dispatch) => {
             type: "LoadUserRequest",
         });
 
-        const { data } = await axios.get("/api/v1/myProfile");
+        const { data } = await axios.get("https://abmemories.herokuapp.com/api/v1/myProfile");
         console.log("login already");
         dispatch({
             type: "LoadUserSuccess",
